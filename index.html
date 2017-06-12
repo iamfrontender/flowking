@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flowking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font: 13px Arial;
+        }
+
+        #desktop {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            display: block;
+        }
+
+        #background {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            background-color: #008080;
+        }
+
+        #workspace {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #toolbar {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+
+            padding: 2px;
+        }
+
+        #tray {
+            border: 1px inset white;
+        }
+
+        #tray .icon {
+            width: 20px;
+            height: 20px;
+            background-size: 64px 64px;
+        }
+
+        #start {
+            border-width: 1px;
+        }
+
+        #start > img {
+            width: 22px;
+            height: 22px;
+            float: left;
+            margin-left: 4px;
+        }
+
+        #start > span {
+            line-height: 22px;
+            font-weight: bolder;
+            margin-right: 4px;
+        }
+
+        #start:active {
+            border-style: inset;
+            outline: none;
+            box-shadow: none;
+            border-width: 2px;
+        }
+
+        #flow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .desktop-item {
+            max-width: 80px;
+            margin: 16px;
+        }
+
+        .desktop-item .icon {
+            margin-bottom: 8px;
+        }
+
+        .desktop-item .title {
+            color: white;
+        }
+
+        .plate {
+            background: #C0C0C0;
+            border: 2px outset white;
+            box-shadow: 1px 1px 1px 0px black;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .flex-center-center {
+            align-items: center;
+        }
+
+        .flex-margin > * {
+            margin: 4px;
+        }
+
+        .flex {
+            flex: 1;
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            background-image: url(https://img42.com/ip5Zr+);
+            background-size: 176px 176px;
+        }
+
+        .icon-help {
+            background-position: 0% 100%;
+        }
+
+        .icon-computer {
+            background-position: 97% 48.3%;
+        }
+    </style>
+</head>
+<body>
+    <container id="desktop">
+        <div id="background"></div>
+        <div id="workspace" class="flex-column flex-wrap">
+            <div id="my-computer" class="flex-column flex-center-center desktop-item">
+                <div class="icon icon-computer"></div>
+                <div class="title">My Computer</div>
+            </div>
+            <div id="toolbar" class="plate flex-row">
+                <button id="start" class="plate">
+                    <img src="https://img42.com/zrmy4+" alt="">
+                    <span>Start</span>
+                </button>
+                <span class="flex"></span>
+                <div id="tray" class="flex-row flex-center-center flex-margin">
+                    <span class="icon icon-help"></span>
+                    <span id="time">10:08 PM</span>
+                </div>
+            </div>
+            <canvas id="flow"></canvas>
+        </div>
+    </container>
+
+    <script src="main.js"></script>
+</body>
+</html>
